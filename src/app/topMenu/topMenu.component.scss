@@ -1,0 +1,41 @@
+@import '../../styles.scss';
+
+.menu{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(34, 214, 181, 0);
+  position: absolute;
+  .topMenu{
+    display:flex;
+    height: 85px;
+    width: 1440px;
+    .leftPart{
+      width: 40%;
+      align-self: center;
+    }
+    .rightPart{
+      width: 60%;
+      align-self: center;
+      text-align: right;
+      a{
+        text-decoration: none;
+        color: white;
+        margin-right: 40px;
+        font-size: 14px;
+        font-weight: 400;
+        font-family: 'Roboto';
+      }
+      button{
+        height:41px;
+        width: 139px;
+        background-color: white;
+        color:#0D1351;
+        border-radius: 9px;
+        font-size: 14px;
+        font-weight: 400;
+        font-family: 'Roboto';
+      }
+    }
+  }
+}
