@@ -1,4 +1,5 @@
-import { NgModule } from '@angular/core';
+import { AuthInterceptorService } from './services/interceptors/auth-interceptor.service';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -26,6 +27,7 @@ import { MatMenuModule } from '@angular/material/menu'
 import {
   MatNativeDateModule,
   MatRippleModule,
+  MAT_DATE_LOCALE,
 } from '@angular/material/core'
 import { MatPaginatorModule } from '@angular/material/paginator'
 import { MatProgressBarModule } from '@angular/material/progress-bar'
@@ -49,16 +51,22 @@ import { JobDetailComponent } from './Job-detail/Job-detail.component';
 import { ProfileComponent } from './Profile/Profile.component';
 import { TopMenuComponent } from './topMenu/topMenu.component';
 import { FooterComponent } from './footer/footer.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JWT_OPTIONS, JwtHelperService } from '@auth0/angular-jwt';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { LoginComponent } from './Login/Login.component';
 
 @NgModule({
-  declarations: [						
+  declarations: [		
     AppComponent,
       HomeComponent,
       SearchComponent,
       JobDetailComponent,
       ProfileComponent,
       TopMenuComponent,
-      FooterComponent
+      FooterComponent,
+      DashboardComponent,
+      LoginComponent
    ],
   imports: [
     BrowserModule,
@@ -103,8 +111,15 @@ import { FooterComponent } from './footer/footer.component';
     MatTreeModule,
     MatFormFieldModule,
     ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'es-ES' },{provide: LOCALE_ID, useValue: 'es-ES'},
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptorService,
+    multi: true,
+  },{ provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
+  JwtHelperService,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

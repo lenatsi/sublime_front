@@ -1,3 +1,4 @@
+import { NavigationEnd, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./topMenu.component.scss']
 })
 export class TopMenuComponent implements OnInit {
-
-  constructor() { }
+  visiblebg = false
+  constructor(private router:Router) { }
 
   ngOnInit() {
+    this.router.events.subscribe( route => {
+      if (route instanceof NavigationEnd){
+        if(route.url == "/"){
+          this.visiblebg =false
+        } else{
+          this.visiblebg = true
+        }
+      }
+    })
   }
 
 }

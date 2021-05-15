@@ -4,12 +4,29 @@
       <div class="elementos">
         <h1>Encuentra las mejores ofertas de empleo</h1>
         <div class="input">
-          <input matInput placeholder="Placeholder" />
-          <button type="button"><img src="../../assets/img/􀊫.svg"></button>
+          <input type="text"placeholder="Placeholder" />
+          <button type="button"><img src="../../assets/img/􀊫.svg" /></button>
         </div>
         <p>Busca diseñadores web, fullstack, programador android...</p>
       </div>
     </div>
-    <div class="ofertas"></div>
+  </div>
+  <div class="secondPart">
+    <p class="nombreSeccion">Trabajos destacados de hoy</p>
+    <div class="ofertas">
+      <div class="cardOferta">
+        <img src="" alt="" />
+        <div class="description">
+          <p class="titulo">Titulo trabajo</p>
+          <p class="descripcion">Empresa</p>
+        </div>
+        <p class="location">Localización</p>
+        <button type="button" class="tags">Tiempo completo</button>
+        <p class='updatedAt'>Fecha publicación</p>
+      </div>
+    </div>
+  </div>
+  <div class="thirdPart">
+    <button type="submit" class="btn" (click)='search()'>Ver todas las ofertas <span>>></span></button>
   </div>
 </div>

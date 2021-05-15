@@ -1,3 +1,45 @@
-<p>
-  Search works!
-</p>
+
+<div class="sections">
+  <div class="Filter">
+    <div class="searchBox">
+      <mat-form-field class="search">
+        <mat-label>Búsqueda</mat-label>
+        <input matInput placeholder="Ex. Pizza">
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="select">
+        <mat-label>Tipo de oferta</mat-label>
+        <mat-select>
+          <mat-option value="one">Tiempo completo</mat-option>
+          <mat-option value="two">Tiempo parcial</mat-option>
+          <mat-option value="three">Prácticas</mat-option>
+          <mat-option value="four">Proyecto</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="location">
+        <mat-label>Localización</mat-label>
+        <input matInput placeholder="Ex. Pizza">
+      </mat-form-field>
+      <button type="button" class="btn btn-primary"><i class="fas fa-search"></i>Buscar</button>
+    </div>
+  </div>
+  <div class="secondPart">
+    <p class="nombreSeccion">Número de resultados</p>
+    <div class="ofertas">
+      <div *ngFor="let item of trabajos" class="cardOferta">
+        <a [routerLink]="['/job/'+item._id]" routerLinkActive="router-link-active">
+        <img src="{{item.publishedBy?.photo}}" alt="" />
+        <div class="description">
+          <p class="titulo">{{item.name}}</p>
+          <p class="descripcion">{{item.publishedBy?.nombre}}</p>
+        </div>
+        <p class="location">{{item.localization}}, {{item.city}}</p>
+        <div class="boton"><button type="button" class="tags">{{item.type}}</button></div>
+
+        <p class='updatedAt'>{{formatDate(item.savedAt)}}</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+

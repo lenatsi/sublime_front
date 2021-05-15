@@ -1,10 +1,10 @@
-<div class="menu">
+<div class="menu" [ngClass]="{'visiblebg': visiblebg}">
   <div class="topMenu">
     <div class="leftPart">
       <a href=""><img src="../../assets/img/sublimin.png" /></a>
     </div>
     <div class="rightPart">
-      <a href="">Iniciar sesión</a>
+      <a routerLink='signup'>Iniciar sesión</a>
       <button type="button" class="btn">Publicar ofeta</button>
     </div>
   </div>

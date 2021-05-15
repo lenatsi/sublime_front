@@ -1,3 +1,27 @@
-<p>
-  Job-detail works!
-</p>
+<div class="container">
+  <div class="leftPart">
+    <div class="header">
+      <div class="col-3">
+        <img src="{{logo}}" />
+      </div>
+      <div class="col-9">
+        <div class="row title">{{name}}</div>
+        <div class="row company">{{publishedBy}}</div>
+      </div>
+    </div>
+    <div class="text">
+      {{description}}
+    </div>
+  </div>
+  <div class="rightPart">
+    <button type="submit" class="btn btn-primary"><i class="fab fa-telegram-plane"></i>Inscribirse</button>
+    <div class="info">
+      <div class="location">Localización</div>
+      <div class="iLocation">{{city}}</div>
+      <div class="format">Formato</div>
+      <button type="button" class="tag">{{type}}</button>
+      <div class="fecha">Fecha publicación</div>
+      <div class="iFecha">{{savedAt}}</div>
+    </div>
+  </div>
+</div>
