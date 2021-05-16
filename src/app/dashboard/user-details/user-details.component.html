@@ -1,0 +1,48 @@
+<div class="Profile">
+  <div class="primeraParte">
+    <div class="leftPart">
+      <img src="{{photo}}" alt="">
+    </div>
+    <div class="rightPart">
+      <div class="fila1">
+        <div class="title">{{nombre}} {{apellidos}}</div>
+        <div class="email">{{email}}</div>
+      </div>
+      <div class="fila2">
+        <div class="left">
+          <div class="profession">Native Apps & Web Fullstack Developer</div>
+          <div class="perfilActivo">Activo hace 2 horas</div>
+        </div>
+        <div class="right">
+          <button type="button" class="btn btn-primary">Contactar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="segundaParte">
+    <div class="col l">
+      <div class="description">Breve descripción</div>
+      <div class="descriptionInfo">{{bio}}</div>
+    </div>
+    <div class="col r">
+      <div class="abilities">Habilidades destacadas</div>
+      <div class="abilitiesInfo">{{abilities}}</div>
+    </div>
+  </div>
+  <div class="misOfertas">Vacantes a las que he postulado</div>
+  <div class="terceraParte">
+    <div class="row">
+    <div *ngFor="let item of applied" class="tarjeta">
+      <a [routerLink]="['job/'+item._id]">
+        <div class="photo"><img src="{{item.fotoEmpresa}}"></div>
+        <div class="informacion">
+          <div class="row nombreVacante">{{item.nombreVacante}}</div>
+          <div class="row empresa">{{item.empresaAnuncio}}</div>
+          <div class="row lugar"><span>Ofertado en: </span>{{item.lugarOferta}}, {{item.ciudadOferta}}</div>
+          <div class="row fecha"><span>Fecha de inscripción: </span>{{formatDate(item.fechaApply)}}</div>
+          <div class="row tipo">{{item.tipoContrato}}</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

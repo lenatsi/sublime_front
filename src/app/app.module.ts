@@ -1,3 +1,6 @@
+import { UserDetailsComponent } from './dashboard/user-details/user-details.component';
+import { MyListComponent } from './dashboard/my-list/my-list.component';
+import { JobEditComponent } from './dashboard/job-edit/job-edit.component';
 import { AuthInterceptorService } from './services/interceptors/auth-interceptor.service';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -55,9 +58,10 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JWT_OPTIONS, JwtHelperService } from '@auth0/angular-jwt';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './Login/Login.component';
+import { NotifierModule } from 'angular-notifier';
 
 @NgModule({
-  declarations: [		
+  declarations: [
     AppComponent,
       HomeComponent,
       SearchComponent,
@@ -66,7 +70,10 @@ import { LoginComponent } from './Login/Login.component';
       TopMenuComponent,
       FooterComponent,
       DashboardComponent,
-      LoginComponent
+      LoginComponent,
+      JobEditComponent,
+      MyListComponent,
+      UserDetailsComponent
    ],
   imports: [
     BrowserModule,
@@ -111,7 +118,8 @@ import { LoginComponent } from './Login/Login.component';
     MatTreeModule,
     MatFormFieldModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NotifierModule
   ],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'es-ES' },{provide: LOCALE_ID, useValue: 'es-ES'},
   {

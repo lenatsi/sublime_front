@@ -106,12 +106,12 @@ export class JobEditComponent implements OnInit {
           },
         )
       }
-      this.router.navigate(['/dashboard'])
+      this.router.navigate(['/user'])
     })
   }
 
   updated() {
-    this.router.navigate(['/dashboard'])
+    this.router.navigate(['/user'])
   }
   formatDate(){}
 }

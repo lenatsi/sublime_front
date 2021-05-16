@@ -3,13 +3,29 @@
     <div class="title">
       <p>¿Listo para trabajar?</p>
     </div>
-    <div class="inputs">
-      <p>Email</p>
-      <input class='email' type="text">
-      <p>Contraseña</p>
-      <input class='password' type='text'>
-      <button type='submit' class="btn btn-primary">¡Adelante!</button>
+    <form
+      [formGroup]="mForm"
+      (ngSubmit)="login()"
+      class="row g-2 needs-validation"
+      novalidate
+    >
+    <div class="form-floating ">
+      <input type="email" class="form-control email" id="floatingInput" formControlName="email" [ngClass]="{'is-invalid': isSend && f.email.errors}" placeholder="Correo electrónico">
+      <label for="floatingInput">Email</label>
+      <div class="invalid-feedback">
+        Introduce un email válido
     </div>
   </div>
+  <div class="form-floating ">
+      <input type="password" class="form-control password" formControlName="password" [ngClass]="{'is-invalid': isSend && f.password.errors}" id="floatingPassword" placeholder="Contraseña">
+      <label for="floatingPassword">Contraseña</label>
+      <div class="invalid-feedback">
+        Introduce una contraseña válida
+    </div>
+  </div>
+  <a href="">¿Has olvidado la contraseña?</a>
 
+  <button class="w-100 btn btn-lg btn-primary Submit" type="submit">Entrar</button>
+    </form>
+  </div>
 </div>

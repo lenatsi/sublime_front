@@ -29,4 +29,16 @@ export class UserService {
       }),
     )
   }
+  userDetail(): Observable<any> {
+    return this.httpClient.get(`${environment.apiUrl}/user/myapplies`).pipe(
+      catchError((error) => {
+        return error
+      }),)
+  }
+  apply(): Observable<any> {
+    return this.httpClient.get(`${environment.apiUrl}/job/apply`).pipe(
+      catchError((error) => {
+        return error
+      }),)
+  }
 }
