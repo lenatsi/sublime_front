@@ -51,7 +51,13 @@ export class LoginComponent implements OnInit {
         //guardar token
         this.notifierService.notify('success', 'Datos actualizados')
         localStorage.setItem('token', data.access_token)
-        this.router.navigate(['/user'])
+
+        if (data.role == 'company'){
+          this.router.navigate(['/user/company'])
+        }else {
+          this.router.navigate(['/user/myprofile'])
+        }
+
       },
       (error) => {
         console.log('Error:', error)

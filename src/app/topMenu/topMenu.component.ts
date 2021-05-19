@@ -20,6 +20,10 @@ export class TopMenuComponent implements OnInit {
         }
       }
     })
+
+    //Hacer comprobación de ultimo acceso
+    //restar del date.now() actual a la fecha guardada en DB
   }
+
 
 }

@@ -59,6 +59,8 @@ import { JWT_OPTIONS, JwtHelperService } from '@auth0/angular-jwt';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './Login/Login.component';
 import { NotifierModule } from 'angular-notifier';
+import { TruncateModule } from 'ng2-truncate';
+
 
 @NgModule({
   declarations: [
@@ -119,7 +121,8 @@ import { NotifierModule } from 'angular-notifier';
     MatFormFieldModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NotifierModule
+    NotifierModule,
+    TruncateModule
   ],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'es-ES' },{provide: LOCALE_ID, useValue: 'es-ES'},
   {

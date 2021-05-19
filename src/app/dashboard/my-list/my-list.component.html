@@ -1,3 +1,45 @@
-<p>
-  my-list works!
-</p>
+<div class="CompanyProfile">
+  <div class="primeraParte">
+    <div class="leftPart">
+      <img src="{{photo}}" alt="">
+    </div>
+    <div class="rightPart">
+      <div class="fila1">
+        <div class="title">{{nombre}}</div>
+        <div class="email">{{email}}</div>
+      </div>
+      <div class="fila2">
+        <div class="left">
+          <div class="slogan">"Nuestro slogan va aquí"</div>
+          <div class="perfilActivo">Activo hace 2 horas</div>
+        </div>
+        <div class="right">
+          <button type="button" class="btn btn-primary">Contactar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h3>Quienes somos</h3>
+  <div class="bio">
+    <p>{{bio}}</p>
+  </div>
+  <h3>Ofertas publicadas</h3>
+  <div class="segundaParte">
+    <div class="row ofertas">
+      <div *ngFor="let item of trabajos" class="col-4 cardOferta">
+        <a [routerLink]="['/job/'+item._id]" routerLinkActive="router-link-active">
+        <div class="description">
+          <p class="titulo">{{item.name }}</p>
+          <p class="descripcion">{{item.description| slice:0:160}} ...</p>
+          <p class="applicants">Personas apuntadas a la oferta: {{item.applicants}}</p>
+        </div>
+        <div class="boton"><button type="button" class="tags">{{item.type}}</button></div>
+        <p class="location">Lugar: {{item.city}}, {{item.localization}} </p>
+
+
+        <p class='updatedAt'>Publicado: {{formatDate(item.savedAt)}}</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

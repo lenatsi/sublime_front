@@ -1,3 +1,4 @@
+import { MyListComponent } from './dashboard/my-list/my-list.component';
 import { UserDetailsComponent } from './dashboard/user-details/user-details.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './Login/Login.component';
@@ -21,8 +22,11 @@ const routes: Routes = [
       { path: "", redirectTo: "myprofile", pathMatch: "full" },
       { path: "myprofile", component: UserDetailsComponent },
       { path: "jobedit", component: JobEditComponent },
+      { path: "company", component: MyListComponent}
+
     ],canActivate: [AuthGuardService],
   },
+  {path: "user/myprofile/job/:id", redirectTo:"job/:id"},
 
   {path: "signin", component: LoginComponent}
 ];

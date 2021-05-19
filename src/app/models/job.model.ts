@@ -3,6 +3,7 @@ export class Job {
   _id?: string
   name?: string
   logo?:string
+  applicants?: string
   description?: string
   localization?: string
   city?: string
